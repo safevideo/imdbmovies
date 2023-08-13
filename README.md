@@ -3,9 +3,9 @@
 `moviedb` is a python wrapper to represent the [IMDB](https://www.imdb.com) API. It helps you to get files i.e. Movies/TV-Series information from IMDB by scraping.
 
 Differences compared to [pymoviedb](https://github.com/itsmehemant7/PyMovieDb):
-- Includes language support. (@9Mad-Max5)
-- Returns `json` instead of `str`. (@Loukious)
-- Many parsing errors are fixed. (@Loukious)
+- Includes language support. ([@9Mad-Max5](https://github.com/9Mad-Max5))
+- Returns `json` instead of `str`. ([@Loukious](https://github.com/Loukious))
+- Many parsing errors are fixed. ([@Loukious](https://github.com/Loukious))
 
 ****
 _*Feature and fix PR's are welcome*_
