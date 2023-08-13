@@ -1,7 +1,7 @@
 import re
 import json
 import requests
-from PyMovieDb import ImdbParser
+from imdbmovies import ImdbParser
 from bs4 import BeautifulSoup
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 

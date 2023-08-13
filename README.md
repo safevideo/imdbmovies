@@ -1,6 +1,6 @@
 # moviedb 
 
-`moviedb` is a python wrapper to represent the [IMDB](https://www.imdb.com) API. It helps you to get files i.e. Movies/TV-Series information from IMDB by scraping.
+`imdbmovies` is a python wrapper to represent the [IMDB](https://www.imdb.com) API. It helps you to get files i.e. Movies/TV-Series information from IMDB by scraping.
 
 Differences compared to [pymoviedb](https://github.com/itsmehemant7/PyMovieDb):
 - Includes language support. ([@9Mad-Max5](https://github.com/9Mad-Max5))
@@ -13,21 +13,22 @@ _*Feature and fix PR's are welcome*_
 
 ## Installation
 
-`moviedb` is available on [pypi](https://pypi.org/project/moviedb/):
+`imdbmovies` is available on [pypi](https://pypi.org/project/imdbmovies/):
 
-```pip install moviedb```
-
+```pip install imdbmovies```
 
 ## Documentation 
-**1) Getting a Movie/Tv-Series info :-**
+
+**1. Getting a Movie/Tv-Series info:**
 
 Use ``` get_by_name(<name>, tv=False) ``` method to get information of a movie/TV-Series.
 
 The ``` tv ``` is an optional argument, if ``` tv=True``` it will get data from ```TV Series``` files only.
 
-On the other hand, if ```tv=False``` (default), it will find your file in ```Movies + TV Series``` results
+On the other hand, if ```tv=False``` (default), it will find your file in ```Movies + TV Series``` results:
+
 ```python
->>> from moviedb import IMDB
+>>> from imdbmovies import IMDB
 >>> imdb = IMDB()
 >>> res = imdb.get_by_name('House Of The Dragon', tv=True)
 >>> print(res)
@@ -89,11 +90,13 @@ On the other hand, if ```tv=False``` (default), it will find your file in ```Mov
 >>> 
 
 ```
-**2) Getting a file Info by it's IMDB ID :-**
 
-Use ```get_by_id(<ID>)``` method to get a file information by it's IMDB ID.
+**2. Getting a file Info by it's IMDB ID:**
+
+Use ```get_by_id(<ID>)``` method to get a file information by it's IMDB ID:
+
 ```python
->>> from moviedb import IMDB
+>>> from imdbmovies import IMDB
 >>> imdb = IMDB()
 >>> res = imdb.get_by_id("tt12593682")
 >>> print(res)
@@ -163,7 +166,7 @@ Use ```get_by_id(<ID>)``` method to get a file information by it's IMDB ID.
 }
 ```
 
-**3) Searching on IMDB :-**
+**3. Searching on IMDB:**
 
 * Use ```search(<name>, year=None, tv=False, person=False)``` method to search a file/movie/tv on IMDB.
 
@@ -174,7 +177,7 @@ Use ```get_by_id(<ID>)``` method to get a file information by it's IMDB ID.
 _**Recommendation -** Pass ```year``` argument to increase the accuracy to hit requested file._
 
 ```python
->>> from moviedb import IMDB
+>>> from imdbmovies import IMDB
 >>> imdb = IMDB()
 >>> res = imdb.search('liger', year=2022)
 >>> print(res)
@@ -221,14 +224,14 @@ _**Recommendation -** Pass ```year``` argument to increase the accuracy to hit r
 }
 ```
 
-**4) Getting a Person/Celebrity Profile Information:-**
+**4. Getting a Person/Celebrity Profile Information:**
 
 * Use ```person_by_name(<name>)``` method to get profile info by name from IMDB.
 * Use ```person_by_id(<IMDB_ID>)``` method to get profile info by it's ID.
 
 
 ```python
->>> from moviedb import IMDB
+>>> from imdbmovies import IMDB
 >>> imdb = IMDB()
 >>> res = imdb.person_by_name('Rajkummar Rao') #OR imdb.person_by_id("nm3822770")
 >>> print(res)
@@ -244,7 +247,7 @@ _**Recommendation -** Pass ```year``` argument to increase the accuracy to hit r
 >>> 
 ```
 
-**5) Language Support:**
+**5. Language Support:**
 
 Added the possibiltie to use en language encoding like this:
 
@@ -256,20 +259,24 @@ If there is a special alternated name for the used country, it will be passed to
 The original Name will be untouched
 
 ## Other Useful Methods:
-* #### Get Upcoming Movies List :
+
+* #### Get Upcoming Movies List:
 
 ```python
-from moviedb import IMDB
+from imdbmovies import IMDB
 imdb = IMDB()
 res = imdb.upcoming(region=None)
 # returns upcomming movies info as json
 ```
 ```region``` is an **Optional argument. Use country ISO codes (eg. IN/US/DE/AE etc.)
 to filter results for a particular region.
-* #### Getting Popular Movies List by Genre :
-The ```popular_movies()``` method will return 50 popular movies results starting from ```start_id``` 
+
+* #### Getting Popular Movies List by Genre:
+
+The ```popular_movies()``` method will return 50 popular movies results starting from ```start_id```:
+
 ```python
-from moviedb import IMDB
+from imdbmovies import IMDB
 imdb = IMDB()
 res = imdb.popular_movies(genre=None, start_id=1, sort_by=None)
 # returns top 50 popular movies starting from start id
@@ -279,9 +286,11 @@ res = imdb.popular_movies(genre=None, start_id=1, sort_by=None)
 To see ```sort_by``` options visit [Movies by genre - IMDB](https://www.imdb.com/search/title/?genres=sci-fi&explore=title_type,genres)
 
 * #### Getting Popular TV Series List by Genre :
-The ```popular_tv()``` method will return 50 popular TV-Series starting from ```start_id``` 
+
+The ```popular_tv()``` method will return 50 popular TV-Series starting from ```start_id```:
+
 ```python
-from moviedb import IMDB
+from imdbmovies import IMDB
 imdb = IMDB()
 res = imdb.popular_tv(genre=None, start_id=1, sort_by=None)
 # returns top 50 popular TV Series starting from start id
@@ -291,7 +300,8 @@ res = imdb.popular_tv(genre=None, start_id=1, sort_by=None)
 To see ```sort_by``` options visit [TV Series by genre - IMDB](https://www.imdb.com/search/title/?title_type=tv_series,tv_miniseries&genres=action&view=advanced)
 
 ## Disclaimer
-The moviedb is tested with small amount of data found on [IMDB.com](https://www.imdb.com).
+
+The `imdbmovies`` is tested with small amount of data found on [IMDB.com](https://www.imdb.com).
 This package is developed for educational purpose only. The author does not encourage anyone to 
 use this module for any illegal or un-ethical project/purpose.
 
